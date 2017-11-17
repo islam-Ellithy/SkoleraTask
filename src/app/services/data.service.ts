@@ -12,4 +12,10 @@ export class DataService {
     return this.http.get('https://jsonplaceholder.typicode.com/posts')
       .map(res => res.json());
   }
+
+  //This method return list of users
+  getUsers() {
+    return this.http.get('https://api.github.com/users')
+      .map(res => res.json());
+  }
 }

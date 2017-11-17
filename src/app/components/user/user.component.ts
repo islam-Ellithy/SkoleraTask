@@ -1,6 +1,6 @@
 import { DataService } from './../../services/data.service';
 import { Component, OnInit } from '@angular/core';
-
+import 'app/Classes/user';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -8,20 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  posts: Post[];
+  users: User[];
 
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-    this.dataService.getPosts().subscribe((posts) => {
-      console.log(posts);
-      this.posts = posts;
+    this.dataService.getUsers().subscribe((users) => {
+      console.log(users);
+      this.users = users;
     });
   }
-}
-interface Post {
-  id: number,
-  title: string,
-  body: string,
-  userId: number
+
+
+  onUserClicked(user: User) {
+    console.log("user clicked " + user.login);
+
+  }
+  onButtonClicked() {
+    console.log("Button has been clicked");
+  }
 }
