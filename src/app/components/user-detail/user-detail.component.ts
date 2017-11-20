@@ -18,14 +18,19 @@ export class UserDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute,
     private dataService: DataService,
     private location: Location) {
+
   }
 
   ngOnInit() {
-    this.getUser();
+    this.route.params.subscribe((params: any) => {
+      const id = params['id'];
+      this.getUser(id);
+    });
+
   }
 
-  getUser(): void {
-    const id = + this.route.snapshot.paramMap.get('id');
+  getUser(id: number): void {
+
     this.dataService.getUserDetails(id)
       .subscribe((user) => {
         console.log(user);

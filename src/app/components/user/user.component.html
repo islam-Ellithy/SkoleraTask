@@ -1,12 +1,13 @@
 <div class="sidebar">
   <ul class="users">
-    <li *ngFor="let user of users| slice:pageStart:10" routerLink="/users/{{user.id}}">
+    <li *ngFor="let user of users| slice:pageStart:pageEnd" routerLink="/users/{{user.id}}" (click)="onSelect(user)">
       <span class="badge">{{user.id}}</span> {{user.login}}
     </li>
     <br>
     <button (click)="nextData()">Load More</button>
   </ul>
 </div>
+
 
 <div class="main">
   <router-outlet></router-outlet>
