@@ -8,14 +8,14 @@ export class DataService {
     console.log("Inside Data services");
   }
 
-  getPosts() {
-    return this.http.get('https://jsonplaceholder.typicode.com/posts')
-      .map(res => res.json());
-  }
-
   //This method return list of users
   getUsers() {
     return this.http.get('https://api.github.com/users')
+      .map(res => res.json());
+  }
+
+  getUserDetails(id: number) {
+    return this.http.get('https://api.github.com/users/' + id)
       .map(res => res.json());
   }
 }

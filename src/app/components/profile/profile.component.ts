@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import 'app/Classes/user';
 
 @Component({
@@ -8,6 +8,7 @@ import 'app/Classes/user';
 })
 export class ProfileComponent implements OnInit {
 
+  @Input() user: User;
   constructor() { }
 
   ngOnInit() {

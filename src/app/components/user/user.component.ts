@@ -9,18 +9,22 @@ import 'app/Classes/user';
 export class UserComponent implements OnInit {
 
   users: User[];
-
+  selectedUser: User;
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
+
     this.dataService.getUsers().subscribe((users) => {
       console.log(users);
       this.users = users;
     });
   }
 
+  onSelect(user: User): void {
+    this.selectedUser = user;
+  }
 
-  onUserClicked(user: User) {
+  onUserClicked(user: User): void {
     console.log("user clicked " + user.login);
 
   }

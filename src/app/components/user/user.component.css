@@ -1,3 +1,55 @@
+/* HeroesComponent's private CSS styles */
+.selected {
+  background-color: #CFD8DC !important;
+  color: white;
+}
+.users {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.users li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.users li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.users li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.users .text {
+  position: relative;
+  top: -3px;
+}
+.users .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+
+/*User style above*/
+
 .vertical-menu {
   width: 200px;
   /* Set a width if you like */
@@ -21,6 +73,19 @@
   /* Remove underline from links */
 }
 
+#overlayDiv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
+}
 
 .vertical-menu a:hover {
   background-color: #ccc;
@@ -31,4 +96,16 @@
   background-color: #4CAF50;
   /* Add a green color to the "active/current" link */
   color: white;
+}
+
+.sidebar {
+  display: inline;
+  width: 20%;
+  float: left;
+}
+
+.main {
+  display: inline;
+  width: 75%;
+  float: right;
 }
