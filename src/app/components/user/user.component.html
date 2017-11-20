@@ -1,31 +1,13 @@
-<!-- <h1>
-  Users List</h1>
-
-<div style="position: static;">
-  <h1>hello</h1>
-</div> -->
 <div class="sidebar">
-  <nav>
-    <div class="vertical-menu">
-      <ul class="users">
-        <li *ngFor="let user of users" [class.selected]="user === selectedUser" (click)="onSelect(user)">
-          <a routerLink="users/{{user.id}}" (click)="onUserClicked(user)">
-            <div>
-              <span class="badge">{{user.id}}</span> {{user.login}}
-            </div>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-
-  <br>
-  <button (click)="onButtonClicked()">Load More</button>
-  <br>
+  <ul class="users">
+    <li *ngFor="let user of users| slice:pageStart:10" routerLink="/users/{{user.id}}">
+      <span class="badge">{{user.id}}</span> {{user.login}}
+    </li>
+    <br>
+    <button (click)="nextData()">Load More</button>
+  </ul>
 </div>
 
-<div class="main" *ngIf="selectedUser">
-  <h2>{{ selectedUser.login | uppercase }} Details</h2>
-
-  <app-profile [user]="user"></app-profile>
+<div class="main">
+  <router-outlet></router-outlet>
 </div>

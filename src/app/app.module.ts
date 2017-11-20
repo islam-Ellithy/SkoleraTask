@@ -6,15 +6,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
-import { ProfileComponent } from './components/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { routes } from './app.router';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    ProfileComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserDetailComponent
   ],
   imports: [
     BrowserModule,

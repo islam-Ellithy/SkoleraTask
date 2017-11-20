@@ -1,0 +1,10 @@
+<div class="container" *ngIf="user">
+
+  <img src="{{user.avatar_url}}" alt="John" width="200px" height="240px"><br>
+
+  <span>Username: </span>{{user.login}}<br>  
+  <span>Id: </span>{{user.id}}<br>
+  <span>Name: </span>{{user.name}}<br>
+  <span>Email: </span>{{user.email}}<br>  
+  <span>Created At: </span>{{user.created_at}}<br>
+</div>

@@ -65,6 +65,7 @@ a:hover {
 nav {
   background: green;
 }
+
 nav ul {
   list-style-type: none;
   margin: 0;
@@ -75,7 +76,6 @@ nav ul {
 nav a {
   display: block;
   width: 60px;
-
 }
 
 .nav-left li {
@@ -85,4 +85,3 @@ nav a {
 .nav-right li {
   float: right;
 }
-

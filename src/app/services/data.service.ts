@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http'
-import 'rxjs/add/operator/map'
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+
+
 @Injectable()
 export class DataService {
 
@@ -15,7 +17,7 @@ export class DataService {
   }
 
   getUserDetails(id: number) {
-    return this.http.get('https://api.github.com/users/' + id)
+    return this.http.get('https://api.github.com/user/' + id)
       .map(res => res.json());
   }
 }
